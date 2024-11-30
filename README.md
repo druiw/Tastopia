@@ -1,50 +1,44 @@
-# React + TypeScript + Vite
+# Tastopia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tastopia is a web application designed to help users find the best restaurants based on location, food type, and price range. Users can search for different types of food and discover new places to eat near them.
 
-Currently, two official plugins are available:
+## Features
+- **Search Functionality**: Users can search for restaurants based on location, food type, and price range.
+- **Responsive Design**: Works across multiple devices including desktop and mobile.
+- **User-Friendly Interface**: A simple and intuitive UI to find meals effortlessly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- React
+- TypeScript
+- Tailwind CSS
+- React Router
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/yourusername/Tastopia.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd Tastopia
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Run the development server:
+    ```bash
+    npm start
+    ```
 
-- Configure the top-level `parserOptions` property like this:
+## Usage
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Once the server is running, open your browser and go to [http://localhost:3000](http://localhost:3000) to start using the app.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Contributing
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+If you'd like to contribute to Tastopia, feel free to fork this repository, create a branch, and submit a pull request.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
