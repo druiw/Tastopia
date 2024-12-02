@@ -1,19 +1,33 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar"; // Assuming NavBar is in the same folder
+import { fetchPlaces } from "../services/apiRequest"; // Adjust the path based on your file structure
+
+// Define the type for a restaurant
+export interface Restaurant {
+  name: string;
+  formatted_address: string;
+  rating: number;
+  // Add other fields based on the API response if necessary
+}
 
 const SearchPage: React.FC = () => {
   const [priceRange, setPriceRange] = useState("1");
   const [location, setLocation] = useState("");
   const [foodType, setFoodType] = useState("Fast Food");
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([]); // Use Restaurant type here
+  const [error, setError] = useState<string | null>(null); // State for error handling
 
-  const navigate = useNavigate();
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle the form submission
-    console.log({ location, foodType, priceRange });
-    navigate("/comingsoon");
+
+    try {
+      const query = `${foodType} in ${location}`; // Construct the query based on user inputs
+      const data = await fetchPlaces(query); // Fetch data from the API
+      setRestaurants(data.results); // Set the fetched restaurants in state
+    } catch (error) {
+      setError("Failed to fetch restaurants. Please try again later.");
+    }
   };
 
   return (
@@ -77,6 +91,25 @@ const SearchPage: React.FC = () => {
               Search
             </button>
           </form>
+
+          {/* Display Error Message */}
+          {error && <div className="text-red-500">{error}</div>}
+
+          {/* Display Search Results */}
+          {restaurants.length > 0 && (
+            <div className="mt-8">
+              <h3 className="text-2xl font-semibold">Search Results</h3>
+              <ul className="mt-4">
+                {restaurants.map((restaurant, index) => (
+                  <li key={index} className="mb-4 p-4 border-b">
+                    <strong>{restaurant.name}</strong>
+                    <p>{restaurant.formatted_address}</p>
+                    <p>{restaurant.rating} ⭐</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>
