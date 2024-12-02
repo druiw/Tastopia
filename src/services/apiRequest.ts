@@ -1,16 +1,22 @@
 import axios from "axios";
 
-const apiKey = "AIzaSyCHv8MMTFgg3M9MMsr38mT3SCBdpegyEnM";
+// Load environment variables from .env file
+const API_KEY = process.env.REACT_APP_API_KEY; // Make sure the key matches your .env variable name
 
-export async function fetchPlaces(query: string) {
-  const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${query}&key=${apiKey}`;
-
+// Function to fetch places based on the query
+export const fetchPlaces = async (query: string) => {
   try {
+    // Construct the API request URL
+    const url = `https://api.yourapi.com/search?query=${query}&key=${API_KEY}`;
+
+    // Make the GET request to the API
     const response = await axios.get(url);
-    console.log("API Response:", response.data);
-    return response.data;
+
+    // Return the API response
+    return response.data; // Assuming 'data' contains the results you need
   } catch (error) {
-    console.error("Error fetching data:", error);
-    throw error;
+    // If an error occurs, log it and rethrow it
+    console.error("Error fetching places:", error);
+    throw error; // This will be caught by your calling component for error handling
   }
-}
+};
