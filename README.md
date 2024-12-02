@@ -1,6 +1,6 @@
 # Tastopia 🍗
 
-Tastopia is a web application designed to help users find the best restaurants based on location, food type, and price range. Currently, the app is a work in progress, with no real working features at the moment. It's in the early stages of development, and more features will be added in the future.
+Tastopia is a web application designed to help users find the best restaurants based on location, food type, and price range. Currently, the app is a work in progress, with no real working features at the moment. It's in the early stages of development, and more features will be added in the future!
 ##
 ![image](https://github.com/user-attachments/assets/fa323398-1f03-4843-a459-efc159b649b4)
 ## Work in Progress 📝
