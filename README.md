@@ -6,10 +6,10 @@ Welcome to **Tastopia**, a web app to help you discover the best restaurants bas
 
 ## 🚀 Features (In Development) 
 
-- **🔍 Search for restaurants**: Find the best restaurants based on your location and food preferences.
-- **📱 Responsive design**: Optimized for desktop and mobile use.
+- **🔍 Search for restaurants**: Find the best restaurants based on your location and food preferences. ⚠️Down Right Now :( ⚠️
+- **📱 Responsive design**: Optimized for desktop.
 - **💎 Interactive UI**: Beautiful, clean design with intuitive navigation.
-- - **🎉 Food Confetti**: Celebrate your meal discovery with fun food emojis falling like confetti on the homepage!
+- **🎉 Food Confetti**: Celebrate your meal discovery with fun food emojis falling like confetti on the homepage!
 
 ## ✨ Preview
 ![image](https://github.com/user-attachments/assets/6dce08e2-1cc0-4997-a25a-3cf3dc11fa91)
@@ -20,7 +20,20 @@ Welcome to **Tastopia**, a web app to help you discover the best restaurants bas
 
 To run the project locally, follow these steps:
 
-1. **Clone the repository**:
+1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/username/Tastopia.git
+   git clone https://github.com/yourusername/portfolio.git
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser
