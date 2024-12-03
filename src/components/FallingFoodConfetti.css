@@ -1,0 +1,27 @@
+.falling-food-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensure it doesn't block clicks */
+  z-index: 1; /* Ensure it stays behind the main content */
+}
+
+.falling-food-item {
+  position: absolute;
+  font-size: 36px; /* Adjust for bigger emojis */
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-120px); /* Start from above the screen */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh); /* Move to the bottom of the screen */
+    opacity: 0;
+  }
+}

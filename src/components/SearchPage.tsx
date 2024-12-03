@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar"; // Assuming NavBar is in the same folder
 import { fetchPlaces } from "../services/apiRequest"; // Adjust the path based on your file structure
 
