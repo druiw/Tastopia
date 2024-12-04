@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-//import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar"; // Assuming NavBar is in the same folder
 import { fetchPlaces } from "../services/apiRequest"; // Adjust the path based on your file structure
+import FallingFoodConfetti from "./FallingFoodConfetti";
 
 // Define the type for a restaurant
 export interface Restaurant {
@@ -31,12 +31,17 @@ const SearchPage: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-full bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500">
+    <div className="relative h-screen w-full bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500">
       {/* NavBar fixed at top */}
       <NavBar />
 
+      {/* FallingFoodConfetti positioned between background and content */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <FallingFoodConfetti />
+      </div>
+
       {/* Content section with padding-top for navbar */}
-      <div className="pt-24 w-full flex justify-center">
+      <div className="relative z-20 pt-24 w-full flex justify-center">
         <div className="text-center space-y-8 bg-white p-6 rounded-lg shadow-xl w-full max-w-2xl">
           <h2 className="text-3xl font-semibold mb-4">Find Your Next Meal</h2>
 
@@ -115,5 +120,4 @@ const SearchPage: React.FC = () => {
     </div>
   );
 };
-
 export default SearchPage;

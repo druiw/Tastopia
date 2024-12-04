@@ -1,16 +1,17 @@
 import axios from "axios";
 
-// Load environment variables from .env file
-const API_KEY = process.env.REACT_APP_API_KEY; // Make sure the key matches your .env variable name
+const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 // Function to fetch places based on the query
 export const fetchPlaces = async (query: string) => {
   try {
-    // Construct the API request URL
-    const url = `https://api.yourapi.com/search?query=${query}&key=${API_KEY}`;
+    // Backend endpoint that will handle the API request
+    const url = `http://localhost:5000/api/places?query=${query}`;
 
-    // Make the GET request to the API
+    // Make the GET request to the backend
     const response = await axios.get(url);
+    console.log("API Response:", response.data);
+    console.log("API KEY: ", API_KEY);
 
     // Return the API response
     return response.data; // Assuming 'data' contains the results you need

@@ -1,45 +1,61 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import "./fallingfoodconfetti.css";
 
-const FallingFoodConfetti: React.FC = () => {
-  const [foodItems, setFoodItems] = useState<string[]>([]);
+interface FoodItem {
+  emoji: string;
+  left: string;
+  duration: string;
+  delay: string;
+}
+
+const FallingFoodConfetti: React.FC = memo(() => {
+  const [foodItems, setFoodItems] = useState<FoodItem[]>([]);
 
   useEffect(() => {
-    const emojis = ["🍔", "🍕", "🍣", "🍩", "🍎", "🥗", "🌮", "🍦"];
-    const numberOfEmojis = 55; // Increase number of falling emojis
-    const newFoodItems = [];
+    const emojis = [
+      "🍔",
+      "🍕",
+      "🍣",
+      "🍩",
+      "🍎",
+      "🥗",
+      "🌮",
+      "🍦",
+      "🍗",
+      "🥨",
+      "🥤",
+    ];
 
-    // Generate an array of random food items
-    for (let i = 0; i < numberOfEmojis; i++) {
-      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-      newFoodItems.push(emoji);
-    }
+    const generateFoodItems = (count: number): FoodItem[] => {
+      return Array.from({ length: count }).map(() => ({
+        emoji: emojis[Math.floor(Math.random() * emojis.length)],
+        left: `${Math.random() * 100}%`, // Random horizontal position
+        duration: `${Math.random() * 5 + 5}s`, // Random duration (5-10 seconds)
+        delay: `${Math.random() * 3}s`, // Random animation delay
+      }));
+    };
 
+    const newFoodItems = generateFoodItems(55); // Number of falling emojis
     setFoodItems(newFoodItems);
   }, []);
 
-  // Function to generate random position
-  const randomPosition = () => `${Math.random() * 100}%`; // Random horizontal position
-  const randomDuration = () => `${Math.random() * 5 + 5}s`; // Random duration between 5s and 10s
-  const randomDelay = () => `${Math.random() * 3}s`; // Optional: delay for more randomness
-
   return (
     <div className="falling-food-container">
-      {foodItems.map((emoji, index) => (
+      {foodItems.map((item, index) => (
         <div
           key={index}
           className="falling-food-item"
           style={{
-            left: randomPosition(),
-            animationDuration: randomDuration(),
-            animationDelay: randomDelay(),
+            left: item.left,
+            animationDuration: item.duration,
+            animationDelay: item.delay,
           }}
         >
-          {emoji}
+          {item.emoji}
         </div>
       ))}
     </div>
   );
-};
+});
 
 export default FallingFoodConfetti;
