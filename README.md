@@ -1,6 +1,6 @@
 # 🍽️ Tastopia 🍕🍣
 
-Welcome to **Tastopia**, a web app to help you discover the best restaurants based on your preferences such as distance, price, and type of food. Built with React, TypeScript, Tailwind CSS, and restaurant APIs for real-time data, **Tastopia** makes finding your next meal an exciting adventure!
+Welcome to **Tastopia**, a web app to help you discover the best restaurants based on your preferences such as distance, price, and type of food. Built with React, TypeScript, Tailwind CSS, and restaurant APIs for real-time data, **Tastopia** makes finding your next meal an exciting adventure!!
 
 **Note**: **Tastopia** is still in the early stages of development 🚧 and is **not fully functional** yet. Some features are still being implemented, and the app may not be stable in its current state. Stay tuned for future updates! 
 
