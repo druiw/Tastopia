@@ -8,7 +8,6 @@ const port = 5000;
 // Enable CORS to allow frontend to access the backend
 app.use(cors());
 
-// Your Google API key (from environment variable or hardcoded here)
 const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY || "YOUR_GOOGLE_API_KEY";
 
 // To track the number of API calls

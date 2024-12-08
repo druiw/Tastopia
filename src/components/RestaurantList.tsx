@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchPlaces } from "../services/apiRequest"; // Adjust the path based on your project structure
+import { fetchPlaces } from "../services/apiRequest";
 import { Restaurant } from "./SearchPage";
 
 interface RestaurantListProps {

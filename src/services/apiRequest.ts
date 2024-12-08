@@ -8,7 +8,7 @@ export const fetchPlaces = async (query: string) => {
     // Backend endpoint that will handle the API request
     const url = `http://localhost:5000/api/places?query=${query}`;
 
-    // Make the GET request to the backend
+    // Make the GET request to the backend : Debugging logs
     const response = await axios.get(url);
     console.log("API Response:", response.data);
     console.log("API KEY: ", API_KEY);
@@ -21,6 +21,6 @@ export const fetchPlaces = async (query: string) => {
   } catch (error) {
     // If an error occurs, log it and rethrow it
     console.error("Error fetching places:", error);
-    throw error; // This will be caught by your calling component for error handling
+    throw error; // This will be caught by calling component for error handling
   }
 };
