@@ -6,7 +6,7 @@ Welcome to **Tastopia**, a web app to help you discover the best restaurants bas
 
 ## 🚀 Features (In Development) 
 
-- **🔍 Search for restaurants**: Find the best restaurants based on your location and food preferences. ⚠️Down Right Now :( ⚠️
+- **🔍 Search for restaurants**: Find the best restaurants based on your location and food preferences.
 - **📱 Responsive design**: Optimized for desktop.
 - **💎 Interactive UI**: Beautiful, clean design with intuitive navigation.
 - **🎉 Food Confetti**: Celebrate your meal discovery with fun food emojis falling like confetti on the homepage!
