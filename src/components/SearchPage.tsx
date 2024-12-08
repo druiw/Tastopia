@@ -31,7 +31,7 @@ const SearchPage: React.FC = () => {
   };
 
   return (
-    <div className="relative h-screen w-full bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500">
+    <div className="relative min-h-screen w-full bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 overflow-auto">
       {/* NavBar fixed at top */}
       <NavBar />
 
@@ -41,7 +41,7 @@ const SearchPage: React.FC = () => {
       </div>
 
       {/* Content section with padding-top for navbar */}
-      <div className="relative z-20 pt-24 w-full flex justify-center">
+      <div className="relative z-20 pt-24 pb-24 w-full flex justify-center">
         <div className="text-center space-y-8 bg-white p-6 rounded-lg shadow-xl w-full max-w-2xl">
           <h2 className="text-3xl font-semibold mb-4">Find Your Next Meal</h2>
 
@@ -104,7 +104,7 @@ const SearchPage: React.FC = () => {
           {restaurants.length > 0 && (
             <div className="mt-8">
               <h3 className="text-2xl font-semibold">Search Results</h3>
-              <ul className="mt-4">
+              <ul className="mt-4 bg-white rounded-lg shadow">
                 {restaurants.map((restaurant, index) => (
                   <li key={index} className="mb-4 p-4 border-b">
                     <strong>{restaurant.name}</strong>
