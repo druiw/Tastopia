@@ -24,6 +24,9 @@ const FallingFoodConfetti: React.FC = memo(() => {
       "🍗",
       "🥨",
       "🥤",
+      "🍇",
+      "🍟",
+      "🥞",
     ];
 
     const generateFoodItems = (count: number): FoodItem[] => {
