@@ -12,11 +12,11 @@ export const fetchPlaces = async (query: string) => {
     const response = await axios.get(url);
 
     // Used for debugging
-    // console.log("API Response:", response.data);
-    // console.log("API KEY: ", API_KEY);
-    // console.log("Request URL:", url);
-    // console.log(`Constructed URL: ${url}`);
-    // console.log(`Using API Key: ${API_KEY}`);
+    console.log("API Response:", response.data);
+    console.log("API KEY: ", API_KEY);
+    console.log("Request URL:", url);
+    console.log(`Constructed URL: ${url}`);
+    console.log(`Using API Key: ${API_KEY}`);
 
     // Return the API response
     return response.data; // Assuming 'data' contains the results you need

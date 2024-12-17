@@ -1,6 +1,9 @@
 import express from "express";
 import axios from "axios";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const port = 5000;
@@ -8,7 +11,7 @@ const port = 5000;
 // Enable CORS to allow frontend to access the backend
 app.use(cors());
 
-const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY || "YOUR_GOOGLE_API_KEY";
+const API_KEY = process.env.GOOGLE_API_KEY;
 
 // To track the number of API calls
 let requestCount = 0;
